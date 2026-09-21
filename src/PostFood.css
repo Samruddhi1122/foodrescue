@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+post-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #edf9ee, #f7fcf7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 750px;
+  background: white;
+  padding: 45px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(40, 90, 50, 0.12);
+}
+
+.post-card h1 {
+  color: #237a3b;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.post-card > p {
+  text-align: center;
+  color: #68736b;
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.post-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #26352a;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cdddcf;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #237a3b;
+  box-shadow: 0 0 0 3px rgba(35, 122, 59, 0.10);
+}
+
+.post-card button {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+  background: #237a3b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-card button:hover {
+  background: #195e2d;
+}
+
+.success-message {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e7f7e9;
+  color: #287c38;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .post-card {
+    padding: 30px 20px;
+  }
+
+  .post-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .post-card button {
+    grid-column: auto;
+  }
+}
