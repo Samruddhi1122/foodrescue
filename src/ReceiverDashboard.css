@@ -1,0 +1,86 @@
+.receiver-dashboard {
+  min-height: 100vh;
+  padding: 60px 7%;
+  background: #f3faf4;
+}
+
+.receiver-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.dashboard-tag {
+  color: #237a3b;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.receiver-header h1 {
+  font-size: 42px;
+  color: #1d4727;
+  margin-bottom: 12px;
+}
+
+.receiver-header p {
+  color: #68736b;
+  font-size: 17px;
+}
+
+.receiver-cards {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.receiver-card {
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid #e1eee2;
+  box-shadow: 0 8px 25px rgba(30, 80, 40, 0.08);
+  text-align: center;
+}
+
+.receiver-card-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.receiver-card h2 {
+  color: #237a3b;
+  margin-bottom: 10px;
+}
+
+.receiver-card p {
+  color: #68736b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.receiver-card button {
+  padding: 12px 25px;
+  background: #237a3b;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.receiver-card button:hover {
+  background: #195e2d;
+}
+
+@media (max-width: 800px) {
+  .receiver-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .receiver-header h1 {
+    font-size: 32px;
+  }
+}

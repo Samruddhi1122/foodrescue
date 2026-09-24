@@ -155,3 +155,7 @@ available-page {
     font-size: 32px;
   }
 }
+.food-card button:disabled {
+  background: #7aaa80;
+  cursor: default;
+}

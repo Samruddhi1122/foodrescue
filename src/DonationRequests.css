@@ -1,0 +1,130 @@
+.requests-page {
+  min-height: 100vh;
+  padding: 60px 7%;
+  background: #f3faf4;
+}
+
+.requests-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.dashboard-tag {
+  color: #237a3b;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.requests-header h1 {
+  font-size: 42px;
+  color: #1d4727;
+  margin-bottom: 12px;
+}
+
+.requests-header p {
+  color: #68736b;
+  font-size: 17px;
+}
+
+.requests-list {
+  max-width: 950px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.request-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #e1eee2;
+  box-shadow: 0 8px 25px rgba(30, 80, 40, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.request-food-icon {
+  font-size: 50px;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.request-info h2 {
+  color: #237a3b;
+  margin-bottom: 12px;
+}
+
+.request-info p {
+  color: #68736b;
+  margin: 7px 0;
+}
+
+.request-status {
+  font-weight: bold;
+}
+
+.request-status.pending {
+  color: #c58a00;
+}
+
+.request-status.approved {
+  color: #237a3b;
+}
+
+.request-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.request-actions button {
+  min-width: 100px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.approve-btn {
+  background: #237a3b;
+}
+
+.approve-btn:hover {
+  background: #195e2d;
+}
+
+.reject-btn {
+  background: #c94c4c;
+}
+
+.reject-btn:hover {
+  background: #a63838;
+}
+
+@media (max-width: 700px) {
+  .request-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .request-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .request-actions button {
+    flex: 1;
+  }
+
+  .requests-header h1 {
+    font-size: 32px;
+  }
+}

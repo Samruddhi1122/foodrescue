@@ -11,10 +11,14 @@ function Register() {
     e.preventDefault();
 
     if (name && email && password) {
-      alert("Registration successful!");
-    } else {
-      alert("Please fill all the fields.");
-    }
+  localStorage.setItem("foodrescueRole", role);
+  localStorage.setItem("foodrescueEmail", email);
+
+  alert("Registration successful!");
+  window.location.href = "/login";
+} else {
+  alert("Please fill all the fields.");
+} 
   };
 
   return (
@@ -62,9 +66,12 @@ function Register() {
           <button type="submit">Create Account</button>
         </form>
 
-        <p className="login-text">
-          Already have an account? <span>Login</span>
-        </p>
+       <p className="login-text">
+  Already have an account?{" "}
+  <span onClick={() => (window.location.href = "/login")}>
+    Login
+  </span>
+</p>
       </div>
     </div>
   );

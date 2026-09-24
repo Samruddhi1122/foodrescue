@@ -1,71 +1,86 @@
-login-page {
-  min-height: 80vh;
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #edf9ee, #f7fcf7);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eef9ef;
-  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .login-card {
-  width: 400px;
+  width: 100%;
+  max-width: 500px;
   background: white;
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(40, 90, 50, 0.12);
+  box-sizing: border-box;
 }
 
 .login-icon {
-  font-size: 45px;
+  text-align: center;
+  font-size: 50px;
   margin-bottom: 10px;
 }
 
 .login-card h1 {
-  color: #185c2b;
-  margin-bottom: 8px;
+  text-align: center;
+  color: #237a3b;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.login-card p {
-  color: #666;
-  margin-bottom: 25px;
+.login-card > p {
+  text-align: center;
+  color: #68736b;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .login-card form {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .login-card label {
-  display: block;
-  margin: 15px 0 7px;
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  color: #26352a;
+  margin-top: 10px;
 }
 
 .login-card input {
   width: 100%;
-  padding: 13px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 13px 14px;
+  border: 1px solid #cdddcf;
+  border-radius: 10px;
   font-size: 15px;
   box-sizing: border-box;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #237a3b;
+  box-shadow: 0 0 0 3px rgba(35, 122, 59, 0.1);
 }
 
 .login-card button {
   width: 100%;
-  margin-top: 25px;
-  padding: 13px;
-  background: #218c3a;
+  margin-top: 20px;
+  padding: 14px;
+  background: #237a3b;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 17px;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .login-card button:hover {
-  background: #176b2b;
+  background: #195e2d;
 }
 
 .register-text {
@@ -73,7 +88,17 @@ login-page {
 }
 
 .register-text span {
-  color: #218c3a;
+  color: #237a3b;
   font-weight: bold;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card h1 {
+    font-size: 30px;
+  }
 }

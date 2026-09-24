@@ -5,14 +5,24 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (email && password) {
-      alert("Login successful!");
+  if (email && password) {
+    const role = localStorage.getItem("foodrescueRole");
+
+    alert("Login successful!");
+
+    if (role === "Donor") {
+      window.location.href = "/donor-dashboard";
+    } else if (role === "Receiver") {
+      window.location.href = "/receiver-dashboard";
     } else {
-      alert("Please enter email and password.");
+      window.location.href = "/dashboard";
     }
-  };
+  } else {
+    alert("Please enter email and password.");
+  }
+};
 
   return (
     <div className="login-page">
@@ -43,8 +53,11 @@ function Login() {
         </form>
 
         <p className="register-text">
-          Don't have an account? <span>Register</span>
-        </p>
+  Don't have an account?{" "}
+  <span onClick={() => window.location.href = "/register"}>
+    Register
+  </span>
+</p>
       </div>
     </div>
   );

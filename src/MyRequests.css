@@ -1,0 +1,111 @@
+.my-requests-page {
+  min-height: 100vh;
+  padding: 60px 7%;
+  background: #f3faf4;
+}
+
+.my-requests-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.my-requests-header .dashboard-tag {
+  color: #237a3b;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.my-requests-header h1 {
+  font-size: 42px;
+  color: #1d4727;
+  margin-bottom: 12px;
+}
+
+.my-requests-header p {
+  color: #68736b;
+  font-size: 17px;
+}
+
+.my-requests-list {
+  max-width: 950px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.my-request-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #e1eee2;
+  box-shadow: 0 8px 25px rgba(30, 80, 40, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.my-request-icon {
+  font-size: 50px;
+}
+
+.my-request-info {
+  flex: 1;
+}
+
+.my-request-info h2 {
+  color: #237a3b;
+  margin-bottom: 12px;
+}
+
+.my-request-info p {
+  color: #68736b;
+  margin: 7px 0;
+}
+
+.my-request-status {
+  font-weight: bold;
+}
+
+.my-request-status.pending {
+  color: #c58a00;
+}
+
+.my-request-status.approved {
+  color: #237a3b;
+}
+
+.my-request-status.rejected {
+  color: #c94c4c;
+}
+
+.my-request-card button {
+  padding: 12px 20px;
+  background: #237a3b;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.my-request-card button:hover {
+  background: #195e2d;
+}
+
+@media (max-width: 700px) {
+  .my-request-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .my-request-card button {
+    width: 100%;
+  }
+
+  .my-requests-header h1 {
+    font-size: 32px;
+  }
+}
