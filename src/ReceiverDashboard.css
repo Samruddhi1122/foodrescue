@@ -84,3 +84,38 @@
     font-size: 32px;
   }
 }
+.dashboard-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.profile-btn,
+.logout-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-btn {
+  background: white;
+  color: #237a3b;
+  border: 1px solid #237a3b;
+}
+
+.profile-btn:hover {
+  background: #edf9ee;
+}
+
+.logout-btn {
+  background: #237a3b;
+  color: white;
+  border: none;
+}
+
+.logout-btn:hover {
+  background: #195e2d;
+}

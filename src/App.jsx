@@ -1,9 +1,8 @@
 import "./App.css";
-import PostFood from "./PostFood";
+
 import Login from "./Login";
 import Register from "./Register";
-import logo from "./assets/foodrescue-logo.png";
-import Dashboard from "./Dashboard";
+import PostFood from "./PostFood";
 import AvailableFood from "./AvailableFood";
 import DonorDashboard from "./DonorDashboard";
 import ReceiverDashboard from "./ReceiverDashboard";
@@ -13,85 +12,98 @@ import MyRequests from "./MyRequests";
 import Profile from "./Profile";
 
 function App() {
-  const path = window.location.pathname;
 
-  /* =========================
-     OTHER PAGES
-  ========================= */
+  const handleLogout = () => {
+    localStorage.removeItem("foodrescueName");
+    localStorage.removeItem("foodrescueEmail");
+    localStorage.removeItem("foodrescueRole");
+    localStorage.removeItem("foodrescueId");
 
-  if (path === "/login") {
+    window.location.href = "/login";
+  };
+
+  if (window.location.pathname === "/login") {
     return <Login />;
   }
 
-  if (path === "/register") {
+  if (window.location.pathname === "/register") {
     return <Register />;
   }
 
-  if (path === "/dashboard") {
-    return <Dashboard />;
-  }
-
-  if (path === "/post-food") {
+  if (window.location.pathname === "/post-food") {
     return <PostFood />;
   }
 
-  if (path === "/available-food") {
+  if (window.location.pathname === "/available-food") {
     return <AvailableFood />;
   }
 
-  if (path === "/donor-dashboard") {
-    return <DonorDashboard />;
+  if (window.location.pathname === "/donor-dashboard") {
+    return (
+      <DonorDashboard
+        onLogout={handleLogout}
+      />
+    );
   }
 
-  if (path === "/receiver-dashboard") {
-    return <ReceiverDashboard />;
+  if (window.location.pathname === "/receiver-dashboard") {
+    return (
+      <ReceiverDashboard
+        onLogout={handleLogout}
+      />
+    );
   }
 
-  if (path === "/my-donations") {
+  if (window.location.pathname === "/my-donations") {
     return <MyDonations />;
   }
 
-  if (path === "/donation-requests") {
+  if (window.location.pathname === "/donation-requests") {
     return <DonationRequests />;
   }
 
-  if (path === "/my-requests") {
+  if (window.location.pathname === "/my-requests") {
     return <MyRequests />;
   }
 
-  if (path === "/profile") {
+  if (window.location.pathname === "/profile") {
     return <Profile />;
   }
 
-  /* =========================
-     HOME PAGE
-  ========================= */
-
   return (
-    <div className="home-page">
+    <div className="app">
 
-      {/* NAVBAR */}
-      <header className="navbar">
+      <nav className="navbar">
 
-        <div className="nav-logo">
-          <img src={logo} alt="FoodRescue Logo" />
-          <span>FoodRescue</span>
+        <div className="logo">
+          🌱 FoodRescue
         </div>
 
-        <nav>
-          <a href="/">Home</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
-        </nav>
+        <div className="nav-links">
 
-      </header>
+          <a href="/">
+            Home
+          </a>
 
+          <a href="#how">
+            How It Works
+          </a>
 
-      {/* HERO SECTION */}
-      <section className="hero-section">
+          <a href="/login">
+            Login
+          </a>
 
-        <div className="hero-content">
+          <a href="/register">
+            Register
+          </a>
+
+        </div>
+
+      </nav>
+
+      <section className="hero" id="home">
+
+        <div className="hero-left">
 
           <p className="hero-tag">
             🌱 SAVE FOOD • HELP PEOPLE
@@ -100,172 +112,184 @@ function App() {
           <h1>
             Rescue Food,
             <br />
-            <span>Reduce Waste.</span>
+            Reduce Waste.
           </h1>
 
-          <p className="hero-description">
-            Give surplus food a second chance. Connect with people
-            and organizations to share leftover food with those who
-            need it.
+          <p className="hero-text">
+            FoodRescue connects people with surplus food
+            to those who need it, helping reduce food waste
+            and build a better community.
           </p>
 
-          <div className="hero-small-text">
-            ♻️ Every meal saved makes a difference.
+          <div className="hero-buttons">
+
+            
+
           </div>
 
         </div>
 
+        <div className="hero-right">
 
-        {/* RIGHT SIDE CARD */}
-        <div className="hero-card">
+          <div className="hero-card">
 
-          <div className="hero-food-icon">
-            🍲
-          </div>
+            <div className="hero-food-icon">
+              🍱
+            </div>
 
-          <h2>
-            Food deserves a
-            <br />
-            second chance.
-          </h2>
+            <h2>
+              Food deserves
+              <br />
+              a second chance.
+            </h2>
 
-          <p>
-            Together, we can reduce food waste and
-            <br />
-            make a difference.
-          </p>
+            <p>
+              Share extra food.
+              <br />
+              Help someone in need.
+            </p>
 
-          <div className="hero-card-icons">
-            <span>🌿</span>
-            <span>🌱</span>
-            <span>🍃</span>
           </div>
 
         </div>
 
       </section>
 
-
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="how-section">
+      <section
+        className="how-section"
+        id="how"
+      >
 
         <p className="section-tag">
           HOW IT WORKS
         </p>
 
         <h2>
-          Simple Steps, Big Impact
+          Simple. Smart. Sustainable.
         </h2>
 
-        <p className="section-description">
-          FoodRescue makes it easy to share surplus food with
-          people who need it.
-        </p>
-
-
-        <div className="steps-container">
+        <div className="steps">
 
           <div className="step-card">
-            <div className="step-number">01</div>
-            <div className="step-icon">👤</div>
 
-            <h3>Register</h3>
+            <div className="step-icon">
+              🍱
+            </div>
+
+            <h3>
+              Post Food
+            </h3>
 
             <p>
-              Create your FoodRescue account as a donor or receiver.
+              Donors can easily post their
+              leftover food.
             </p>
+
           </div>
 
-
           <div className="step-card">
-            <div className="step-number">02</div>
-            <div className="step-icon">🍱</div>
 
-            <h3>Share Food</h3>
+            <div className="step-icon">
+              🔍
+            </div>
+
+            <h3>
+              Find Food
+            </h3>
 
             <p>
-              Donors can post surplus food with quantity and location.
+              Receivers can find available
+              food nearby.
             </p>
+
           </div>
 
-
           <div className="step-card">
-            <div className="step-number">03</div>
-            <div className="step-icon">🔍</div>
 
-            <h3>Find Food</h3>
+            <div className="step-icon">
+              🤝
+            </div>
+
+            <h3>
+              Request Food
+            </h3>
 
             <p>
-              Receivers can browse available food and send requests.
+              Request food that is
+              available for sharing.
             </p>
+
           </div>
 
-
           <div className="step-card">
-            <div className="step-number">04</div>
-            <div className="step-icon">💚</div>
 
-            <h3>Make an Impact</h3>
+            <div className="step-icon">
+              🌱
+            </div>
+
+            <h3>
+              Reduce Waste
+            </h3>
 
             <p>
-              Together, we reduce food waste and help our community.
+              Together we can reduce
+              unnecessary food waste.
             </p>
+
           </div>
 
         </div>
 
       </section>
 
-
-      {/* IMPACT SECTION */}
       <section className="impact-section">
 
-        <div className="impact-box">
+        <div className="impact-card">
 
-          <div className="impact-item">
-            <span>🌱</span>
-            <strong>Food Saved</strong>
-            <p>Reduce unnecessary food waste</p>
-          </div>
+          <h2>
+            Making an Impact 🌍
+          </h2>
 
-          <div className="impact-item">
-            <span>🤝</span>
-            <strong>People Helped</strong>
-            <p>Connect food with those in need</p>
-          </div>
+          <p>
+            Every meal shared is a step
+            towards a better future.
+          </p>
 
-          <div className="impact-item">
-            <span>♻️</span>
-            <strong>Better Future</strong>
-            <p>Build a more sustainable community</p>
+          <div className="impact-stats">
+
+            <div>
+              <strong>100+</strong>
+              <span>Meals Shared</span>
+            </div>
+
+            <div>
+              <strong>50+</strong>
+              <span>People Helped</span>
+            </div>
+
+            <div>
+              <strong>25+</strong>
+              <span>Donors</span>
+            </div>
+
           </div>
 
         </div>
 
       </section>
 
-
-      {/* FOOTER */}
       <footer className="footer">
 
-        <div className="footer-logo">
-          🥗 FoodRescue
-        </div>
+        <h3>
+          🌱 FoodRescue
+        </h3>
 
         <p>
-          Rescue food. Reduce waste. Make a difference.
+          Save Food. Help People. Reduce Waste.
         </p>
 
-        <div className="footer-links">
-          <a href="/">Home</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="/available-food">Available Food</a>
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
-        </div>
-
-        <p className="copyright">
-          © 2026 FoodRescue. All rights reserved.
+        <p>
+          © 2026 FoodRescue
         </p>
 
       </footer>
